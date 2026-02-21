@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Speech Recognition App</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🎙️ Speech Recognition Demo</h1>
+      <button id="toggle-theme" aria-label="Toggle theme">
+        <span class="icon">🌓</span>
+      </button>
+    </div>
+
+    <button id="start-btn" aria-label="Start speech recognition">
+      <i class="fas fa-microphone mic-icon"></i> Start Listening
+    </button>
+    <div id="status"></div>
+    <div id="output"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

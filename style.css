@@ -1,0 +1,127 @@
+:root {
+  --bg-color: #f0f0f0;
+  --text-color: #000;
+  --card-bg: #fff;
+  --border-color: #ccc;
+  --button-bg: #007bff;
+  --button-hover: #0056b3;
+  --pulse-color: rgba(40, 167, 69, 0.4);
+}
+
+body.dark {
+  --bg-color: #1e1e1e;
+  --text-color: #eee;
+  --card-bg: #2a2a2a;
+  --border-color: #444;
+  --button-bg: #28a745;
+  --button-hover: #1c8737;
+  --pulse-color: rgba(40, 167, 69, 0.6);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+
+.container {
+  text-align: center;
+  max-width: 600px;
+  width: 90%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#toggle-theme {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+h1 {
+  margin-bottom: 25px;
+  font-size: 2rem;
+}
+
+#start-btn {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  background-color: var(--button-bg);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  width: 35%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#start-btn:hover {
+  background-color: var(--button-hover);
+  transform: translateY(-2px);
+}
+
+#start-btn.listening {
+  animation: pulse 1.2s infinite;
+}
+
+.mic-icon {
+  margin-right: 8px;
+}
+
+#output {
+  margin-top: 20px;
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  font-size: 1.2rem;
+  min-height: 60px;
+  transition: all 0.3s ease-in-out;
+  animation: fadeIn 0.6s ease-in;
+  text-align: left;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 var(--pulse-color); }
+  70% { box-shadow: 0 0 0 20px rgba(0, 0, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+  .container { width: 95%; }
+  h1 { font-size: 1.8rem; }
+  #output { font-size: 1.1rem; padding: 1.2rem; }
+}
+
+@media (max-width: 600px) {
+  .header { flex-direction: column; gap: 0.5rem; }
+  h1 { font-size: 1.5rem; text-align: center; }
+  #start-btn { font-size: 0.95rem; padding: 0.7rem 1.2rem; }
+  #output { font-size: 1rem; padding: 1rem; }
+}
+
+@media (max-width: 320px) {
+  h1 { font-size: 1.2rem; }
+  #start-btn { font-size: 0.85rem; padding: 0.6rem 1rem; }
+  #output { font-size: 0.9rem; padding: 0.8rem; }
+}
